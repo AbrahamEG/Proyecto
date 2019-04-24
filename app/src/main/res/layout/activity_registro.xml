@@ -31,7 +31,7 @@
         android:text="Edad: "
         android:textColor="#89DF5B"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText5"
+        app:layout_constraintEnd_toStartOf="@+id/edadR"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -46,7 +46,7 @@
         android:text="Apellidos: "
         android:textColor="#89DF5B"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/apR"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -61,13 +61,13 @@
         android:text="Nombre: "
         android:textColor="#89DF5B"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText4"
+        app:layout_constraintEnd_toStartOf="@+id/nomR"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/apR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -78,10 +78,10 @@
         android:textColorLink="#64DD17"
         android:textCursorDrawable="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/nomR" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/nomR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/edadR"
         android:layout_width="156dp"
         android:layout_height="43dp"
         android:layout_marginTop="28dp"
@@ -105,6 +105,6 @@
         android:textColor="#F7F5F5"
         android:textCursorDrawable="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/apR" />
 
 </android.support.constraint.ConstraintLayout>
