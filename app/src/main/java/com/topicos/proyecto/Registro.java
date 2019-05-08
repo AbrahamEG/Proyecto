@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class Registro extends AppCompatActivity implements View.OnClickListener {
     TextView etCampoNumero;
     Button btValidar;
-    EditText nombre, ap, am, cont, cont1, tel, correo;
+    EditText nombre, ap, am, cont, cont1, tel, correoo;
     Spinner sex;
     Button registro;
     public static final String REGEX_EMAIL ="([A-Za-z0-9]+@+(gmail|live|hotmail|outlook)+.(com)+)";
@@ -33,6 +33,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         ap = (EditText) findViewById(R.id.appR);
         am = (EditText) findViewById(R.id.apmR);
         tel = (EditText) findViewById(R.id.telR);
+        correoo=(EditText)findViewById(R.id.correoR);
         cont = (EditText) findViewById(R.id.conR);
         cont1 = (EditText) findViewById(R.id.conCR);
         sex = (Spinner) findViewById(R.id.spinner);
@@ -75,7 +76,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         String app = ap.getText().toString();
         String apm = am.getText().toString();
         String tele = tel.getText().toString();
-        String email=correo.getText().toString();
+        String email=correoo.getText().toString();
         String con = cont.getText().toString();
         String con1 = cont1.getText().toString();
         String a1=sex.getSelectedItem().toString();
@@ -91,9 +92,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         }else if (!(con.equals(con1))){
             Toast.makeText(this, "Las contraseñas deben ser iguales",Toast.LENGTH_SHORT).show();
         }else if (!(tele.isEmpty())){
-            Cursor cursor = db.rawQuery("select id from usuario where id=" + tel , null);
+            Cursor cursor = db.rawQuery("select id from usuario where id=" + tele , null);
             if (cursor.moveToFirst()){
-                Toast.makeText(this, "El usuario: "+tel+" actualmente esta en uso",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "El usuario: "+tele+" actualmente esta en uso",Toast.LENGTH_SHORT).show();
             }else{
                 registro.put("id", tele);
                 registro.put("nombre", nom);
@@ -104,11 +105,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 registro.put("correo", email);
                 registro.put("cont", con);
                 db.insert("usuario", null, registro);
+                Toast.makeText(this, "SI INSERTA",Toast.LENGTH_SHORT).show();
                 db.close();
                 AlertDialog.Builder builder= new AlertDialog.Builder(this);
                 builder.setCancelable(true);
                 builder.setTitle("Registro Exitoso");
-                builder.setMessage("\nTu usuario para ingresar al sistema es:\n"+tel);
+                builder.setMessage("\n Bienvenido: "+nom+" "+" "+app+" "+apm+"\nTu usuario para ingresar al sistema es:\n"+tele);
+
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
