@@ -80,6 +80,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     {
         sqlLite admin = new sqlLite(this,"proyectoDesMov",null,1);
         SQLiteDatabase db = admin.getWritableDatabase();
+
         String nom = nombre.getText().toString();
         String app = ap.getText().toString();
         String apm = am.getText().toString();
@@ -118,7 +119,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 AlertDialog.Builder builder= new AlertDialog.Builder(this);
                 builder.setCancelable(true);
                 builder.setTitle("Registro Exitoso");
-                builder.setMessage("\n Bienvenido: "+nom+" "+" "+app+" "+apm+"\nTu usuario para ingresar al sistema es:\n"+tele);
+                builder.setMessage("\n Bienvenido: "+nom+" "+app+" "+apm+"\nTu usuario para ingresar al sistema es:\n"+tele);
 
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override

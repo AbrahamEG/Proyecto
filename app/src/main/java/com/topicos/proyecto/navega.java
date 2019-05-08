@@ -18,8 +18,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.security.AccessControlContext;
-
 
 public class navega extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -122,15 +120,27 @@ public class navega extends AppCompatActivity
             setTitle("Informacion de Usuario");
             Misdatos fragmencl = new Misdatos();
             Bundle args = new Bundle();
-           args.putString("textFromActivityB", texto);
+            args.putString("textFromActivityB", texto);
             fragmencl.setArguments(args);
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();
+
+
+
+
+          /*  setTitle("Informacion de Usuario");
+            Misdatos fragmencl = new Misdatos();
+            Bundle args = new Bundle();
+            args.putString("textFromActivityB", texto);
+            fragmencl.setArguments(args);
+            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.panel,fragmencl,"Crear");
+            transaction.commit();*/
+
         }else if(id == R.id.nav_slideshow){
+
             setTitle("Editar perfil");
-
-
             editarPerfil fragmencl = new editarPerfil();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);
@@ -138,6 +148,7 @@ public class navega extends AppCompatActivity
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel, fragmencl, "Crear");
             transaction.commit();
+
         } else if (id == R.id.nav_send) {
            /* setTitle("Envia tu CV");
             CV fragmencl = new CV();
