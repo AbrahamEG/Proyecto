@@ -117,7 +117,7 @@ public class navega extends AppCompatActivity
         int id = item.getItemId();
        /// Fragment frag;
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_gallery) {
 
             setTitle("Informacion de Usuario");
             Misdatos fragmencl = new Misdatos();
@@ -127,7 +127,7 @@ public class navega extends AppCompatActivity
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();
-        }else if(id == R.id.nav_gallery){
+        }else if(id == R.id.nav_slideshow){
             setTitle("Editar perfil");
 
 
@@ -147,23 +147,23 @@ public class navega extends AppCompatActivity
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();*/
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_send) {
           /*  setTitle("Sugerencia de Empresa");
             Sug_Empresa fragmencl = new Sug_Empresa();
             fragmencl.setActivity(this);
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();*/
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_send) {
            /* setTitle("Catalogo de Empresas");
             Catalogo fragmencl = new Catalogo();
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();*/
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_send) {
             finish();
-        }else if (id == R.id.nav_share) {
+        }else if (id == R.id.nav_send) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_TEXT, "Prueba VinculaTec, uso esta aplicación para encontrar una empresa en la cual pueda desarrollarme profesionalmente, de una manera sencilla. Descárgala gratis desde: https://mega.nz/#F!i6Jj1IIJ!1CyGdgrgjwxVK7Glos_roQ");

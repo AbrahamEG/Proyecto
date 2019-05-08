@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
             }
         });
 
-        ingresar.setOnClickListener(new View.OnClickListener() {
+        ingreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(v.getContext(), navega.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
     tools:context=".Registro"
     tools:layout_editor_absoluteY="25dp">
 
@@ -30,14 +31,14 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/correoR"
-        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintHorizontal_bias="0.308"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
@@ -47,9 +48,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/apmR"
         app:layout_constraintEnd_toStartOf="@+id/appR"
+        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.166" />
 
     <TextView
         android:id="@+id/textView7"
@@ -62,13 +64,13 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/nomR"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/appR"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="45dp"
@@ -79,13 +81,12 @@
         android:textColorLink="#64DD17"
         android:textCursorDrawable="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/nomR" />
 
     <EditText
         android:id="@+id/nomR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="173dp"
+        android:layout_height="23dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="44dp"
         android:background="#E4122A41"
@@ -99,14 +100,14 @@
 
     <EditText
         android:id="@+id/correoR"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="44dp"
         android:background="#E4122A41"
         android:ems="10"
         android:inputType="text"
-        android:textColor="#F7F5F5"
+        android:textColor="@color/colorAccent"
         android:textCursorDrawable="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
@@ -134,19 +135,20 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/conR"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/conR"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="44dp"
         android:background="#E4122A41"
         android:ems="10"
         android:inputType="textPassword"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correoR" />
 
@@ -185,19 +187,20 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/conCR"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <EditText
         android:id="@+id/conCR"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="44dp"
         android:background="#E4122A41"
         android:ems="10"
         android:inputType="textPassword"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/conR" />
 
@@ -211,21 +214,22 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/apmR"
+        app:layout_constraintHorizontal_bias="0.638"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
         android:id="@+id/apmR"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="17dp"
+        android:layout_marginEnd="44dp"
         android:background="#E4122A41"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/appR" />
 
     <TextView
@@ -239,16 +243,16 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="195dp"
-        android:layout_height="25dp"
+        android:layout_width="163dp"
+        android:layout_height="22dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="52dp"
         android:background="#E4122A41"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telR" />
@@ -264,19 +268,20 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/telR"
-        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
         android:id="@+id/telR"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="44dp"
         android:background="#E4122A41"
         android:ems="10"
         android:inputType="phone"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apmR" />
 
