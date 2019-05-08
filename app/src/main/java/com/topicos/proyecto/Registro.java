@@ -1,97 +1,126 @@
 package com.topicos.proyecto;
-
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener {
-
-    EditText no, ap, am, co, cont, contC;
-    Button acep;
+    TextView etCampoNumero;
+    Button btValidar;
+    EditText nombre, ap, am, cont, cont1, tel, correo;
+    Spinner sex;
+    Button registro;
+    public static final String REGEX_EMAIL ="([A-Za-z0-9]+@+(gmail|live|hotmail|outlook)+.(com)+)";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-
-        no = (EditText) findViewById(R.id.nomR);
-        ap = (EditText) findViewById(R.id.nomR);
-        am = (EditText) findViewById(R.id.nomR);
-        co = (EditText) findViewById(R.id.nomR);
-        cont = (EditText) findViewById(R.id.nomR);
-        contC = (EditText) findViewById(R.id.nomR);
-
-
-
-    }
-
-        @Override
-        public void onClick (View v){
-            acep = (Button) findViewById(R.id.btnAceR);
-            acep.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    altaclase(v);
-                }
-            });
-        }
-
-        public void altaclase (View view)
-        {
-            sqlLite admin = new sqlLite(this, "proyecto", null, 1);
-            SQLiteDatabase db = admin.getWritableDatabase();
-            String nom = no.getText().toString();
-            String app = ap.getText().toString();
-            String apm = am.getText().toString();
-            String cor = co.getText().toString();
-            String con = cont.getText().toString();
-            String con1 = contC.getText().toString();
-            ContentValues registro = new ContentValues();
-
-            if (nom.isEmpty() || app.isEmpty() || apm.isEmpty() || con.isEmpty() || con1.isEmpty() || cor.isEmpty()) {
-                Toast.makeText(this, "Hay campos incorrectos o vacios", Toast.LENGTH_SHORT).show();
-            } else if (!(con.equals(con1))) {
-                Toast.makeText(this, "Las contraseñas deben ser iguales", Toast.LENGTH_SHORT).show();
-            } else if (!(cor.isEmpty())) {
-                Cursor cursor = db.rawQuery("select id from usuario where id=" + cor, null);
-                if (cursor.moveToFirst()) {
-                    Toast.makeText(this, "El usuario: " + cor + " actualmente esta en uso", Toast.LENGTH_SHORT).show();
-                } else {
-                   // registro.put("id", 5);
-                    registro.put("nombre", nom);
-                    registro.put("app", app);
-                    registro.put("apm", apm);
-                    registro.put("correo", cor);
-                    registro.put("contraseña", con);
-                    db.insert("usuario", null, registro);
-                    db.close();
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setCancelable(true);
-                    builder.setTitle("Registro Exitoso");
-                    builder.setMessage("\nTu usuario para ingresar al sistema es:\n" + cor);
-                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            //Intent ListFrutas = new Intent(getApplicationContext(), MainActivity.class);
-                            //startActivity(ListFrutas);
-                        }
-                    });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-                    Toast.makeText(this, "si quedo", Toast.LENGTH_SHORT).show();
-                }
-            } else {
-                Toast.makeText(this, "Campo: NUMERO DE CONTROL se encuentra vacio", Toast.LENGTH_SHORT).show();
+        nombre = (EditText) findViewById(R.id.nomR);
+        ap = (EditText) findViewById(R.id.appR);
+        am = (EditText) findViewById(R.id.apmR);
+        tel = (EditText) findViewById(R.id.telR);
+        cont = (EditText) findViewById(R.id.conR);
+        cont1 = (EditText) findViewById(R.id.conCR);
+        sex = (Spinner) findViewById(R.id.spinner);
+        registro = (Button) findViewById(R.id.btnAceR);
+        registro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                altaclase(v);
             }
+        });
+        setupActionBar();
+
+      /*  SpinnerAdapter<String> adapter = new SpinnerAdapter<String>(this,
+                android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.Opciones));
+        sex.setAdapter(adapter);*/
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Opciones, android.R.layout.simple_spinner_item);
+        sex.setAdapter(adapter);
+
+    }
+    private void setupActionBar()
+    {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar !=null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    public void altaclase(View view)
+    {
+        sqlLite admin = new sqlLite(this,"proyecto",null,1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String nom = nombre.getText().toString();
+        String app = ap.getText().toString();
+        String apm = am.getText().toString();
+        String tele = tel.getText().toString();
+        String email=correo.getText().toString();
+        String con = cont.getText().toString();
+        String con1 = cont1.getText().toString();
+        String a1=sex.getSelectedItem().toString();
+
+        ContentValues registro = new ContentValues();
+
+        if( nom.isEmpty() || app.isEmpty() || apm.isEmpty() ||  con.isEmpty() || con1.isEmpty() || email.isEmpty() || tele.isEmpty())
+        {
+            Toast.makeText(this, "Hay campos incorrectos o vacios",Toast.LENGTH_SHORT).show();
+        }
+        else if ( sex.equals("Semestre:")||sex.equals("")){
+            Toast.makeText(this, "Campo: SEMESTRE se encuentra vacio",Toast.LENGTH_SHORT).show();
+        }else if (!(con.equals(con1))){
+            Toast.makeText(this, "Las contraseñas deben ser iguales",Toast.LENGTH_SHORT).show();
+        }else if (!(tele.isEmpty())){
+            Cursor cursor = db.rawQuery("select id from usuario where id=" + tel , null);
+            if (cursor.moveToFirst()){
+                Toast.makeText(this, "El usuario: "+tel+" actualmente esta en uso",Toast.LENGTH_SHORT).show();
+            }else{
+                registro.put("id", tele);
+                registro.put("nombre", nom);
+                registro.put("app", app);
+                registro.put("apm", apm);
+                registro.put("tel", tele);
+                registro.put("sexo",a1);
+                registro.put("correo", email);
+                registro.put("cont", con);
+                db.insert("usuario", null, registro);
+                db.close();
+                AlertDialog.Builder builder= new AlertDialog.Builder(this);
+                builder.setCancelable(true);
+                builder.setTitle("Registro Exitoso");
+                builder.setMessage("\nTu usuario para ingresar al sistema es:\n"+tel);
+                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent ListFrutas = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(ListFrutas);
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+            }
+        }else{
+            Toast.makeText(this, "Campo: Telefono se encuentra vacio",Toast.LENGTH_SHORT).show();
+        }
+    }
+}

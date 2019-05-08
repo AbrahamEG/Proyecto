@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Opciones">
+        <item>Selecciona una opcion</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="uno">
+        <item>Selecciona un animal</item>
+        <item>Serpiente</item>
+        <item>Cocodrilo</item>
+        <item>Iguana</item>
+        <item>Tortuga</item>
+    </string-array>
+    <string-array name="dos">
+        <item>Selecciona un animal</item>
+        <item>Aguila</item>
+        <item>Alcon</item>
+        <item>Buho</item>
+        <item>Flamingo</item>
+    </string-array>
+    <string-array name="tres">
+        <item>Selecciona un animal</item>
+        <item>Leon</item>
+        <item>Tigre</item>
+        <item>Lobo</item>
+        <item>Pantera</item>
+    </string-array>
+    <string-array name="cuatro">
+        <item>Selecciona un animal</item>
+        <item>Ballena</item>
+        <item>Tiburon</item>
+        <item>Delfin</item>
+        <item>Mantarraya</item>
+        <item></item>
+    </string-array>
+</resources>
