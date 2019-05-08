@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
                 if(a1.equals(numc)) {
                     if (a2.equals(con)){
-                       // ChooseAccount.setControl(usr.getText().toString());
+                       ChooseAccount.setControl(usr.getText().toString());
                         Bundle bundle=new Bundle();
                         bundle.putString("variable",numc);
                        // Intent intent = new Intent(getApplicationContext(), Registro.class);
