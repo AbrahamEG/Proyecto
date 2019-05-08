@@ -118,13 +118,6 @@ public class navega extends AppCompatActivity
        /// Fragment frag;
 
         if (id == R.id.nav_home) {
-           /* frag= new crea();
-            FragmentManager fm=getFragmentManager();
-            FragmentTransaction ft=fm.beginTransaction();
-            ft.replace(R.id.contenedor,frag);
-            ft.commit();+*/
-
-
 
             setTitle("Informacion de Usuario");
             Misdatos fragmencl = new Misdatos();
@@ -135,16 +128,16 @@ public class navega extends AppCompatActivity
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();
         }else if(id == R.id.nav_gallery){
-            /*setTitle("Editar perfil");
+            setTitle("Editar perfil");
 
 
-            EditP fragmencl = new EditP();
+            editarPerfil fragmencl = new editarPerfil();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);
             fragmencl.setArguments(args);
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel, fragmencl, "Crear");
-            transaction.commit();*/
+            transaction.commit();
         } else if (id == R.id.nav_send) {
            /* setTitle("Envia tu CV");
             CV fragmencl = new CV();
