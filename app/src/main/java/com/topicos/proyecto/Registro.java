@@ -13,13 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener {
     TextView etCampoNumero;
-    Button btValidar;
+    Button btValidar,bcancelar;
     EditText nombre, ap, am, cont, cont1, tel, correoo;
     Spinner sex;
     Button registro;
@@ -38,10 +37,20 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         cont1 = (EditText) findViewById(R.id.conCR);
         sex = (Spinner) findViewById(R.id.spinner);
         registro = (Button) findViewById(R.id.btnAceR);
+        bcancelar = (Button) findViewById(R.id.btnCanR);
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 altaclase(v);
+            }
+        });
+
+        bcancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(v.getContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+                finish();
             }
         });
         setupActionBar();
