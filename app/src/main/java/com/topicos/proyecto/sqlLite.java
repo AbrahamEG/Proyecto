@@ -11,7 +11,7 @@ public class sqlLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table usuario(id text primary key, nombre text, app text, apm text, tel text, sexo text, correo text, cont text)");
+        db.execSQL("create table usuario (id text primary key, nombre text, app text, apm text, tel text, sexo text, correo text, cont text)");
 
     }
 
