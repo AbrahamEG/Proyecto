@@ -61,15 +61,12 @@ public class Misdatos extends Fragment {
                 sex.setText(fila.getString(4));
                 correo.setText(fila.getString(5));
 
-
             }else {
                 Toast.makeText(getContext(), "No existe ningún dato", Toast.LENGTH_SHORT).show();
                 db.close();
             }
 
-
         }
-
 
     }
 
