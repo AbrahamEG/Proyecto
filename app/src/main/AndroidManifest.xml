@@ -20,7 +20,7 @@
         <activity
             android:name=".navega"
             android:label="@string/title_activity_navega"
-            android:theme="@style/NoActionBar"></activity>
+            android:theme="@style/NoActionBar" />
         <activity android:name=".Registro" />
         <activity android:name=".MainActivity">
             <intent-filter>
