@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         TextView t=(TextView)findViewById(R.id.reg);
 
         usr=(EditText)findViewById(R.id.user);
-        pwd=(EditText)findViewById(R.id.editText2);
+        pwd=(EditText)findViewById(R.id.pass);
         ingreso=(Button)findViewById(R.id.bingre);
 
         t.setOnClickListener(new View.OnClickListener() {
