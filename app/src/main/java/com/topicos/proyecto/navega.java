@@ -1,12 +1,9 @@
 package com.topicos.proyecto;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
-//import android.support.v7.widget.ActivityChooserModel;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -172,8 +169,9 @@ public class navega extends AppCompatActivity
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();*/
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_salir) {
             finish();
+
         }else if (id == R.id.nav_send) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
