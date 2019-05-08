@@ -31,7 +31,7 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/correoR"
-        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -135,6 +135,7 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/conR"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -185,7 +186,7 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/conCR"
-        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
@@ -239,7 +240,7 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -248,7 +249,7 @@
         android:layout_width="195dp"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="64dp"
         android:background="#E4122A41"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telR" />
@@ -264,7 +265,7 @@
         android:textColor="#1B5E20"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/telR"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.317"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 

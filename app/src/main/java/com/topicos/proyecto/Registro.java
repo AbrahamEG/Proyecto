@@ -48,8 +48,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         bcancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(v.getContext(), MainActivity.class) ;
+                Intent intent =new Intent(v.getContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
+                finish();
             }
         });
         setupActionBar();
