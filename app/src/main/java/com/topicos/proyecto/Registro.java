@@ -70,7 +70,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
 
     public void altaclase(View view)
     {
-        sqlLite admin = new sqlLite(this,"proyecto",null,1);
+        sqlLite admin = new sqlLite(this,"proyectoDes",null,1);
         SQLiteDatabase db = admin.getWritableDatabase();
         String nom = nombre.getText().toString();
         String app = ap.getText().toString();
@@ -102,7 +102,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 registro.put("apm", apm);
                 registro.put("tel", tele);
                 registro.put("sexo",a1);
-                registro.put("correo", email);
+                //registro.put("correo", email);
                 registro.put("cont", con);
                 db.insert("usuario", null, registro);
                 Toast.makeText(this, "SI INSERTA",Toast.LENGTH_SHORT).show();

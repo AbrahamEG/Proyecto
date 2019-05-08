@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
 
     }
     public void consulta(View view) {
-        sqlLite admin = new sqlLite(this, "proyecto", null, 1);
+        sqlLite admin = new sqlLite(this, "proyectoDes", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String numc = usr.getText().toString();
