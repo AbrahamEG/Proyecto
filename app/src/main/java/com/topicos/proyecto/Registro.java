@@ -69,7 +69,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
     }
 
     @Override
