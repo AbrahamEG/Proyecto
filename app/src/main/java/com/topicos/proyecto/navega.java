@@ -123,18 +123,6 @@ public class navega extends AppCompatActivity
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();
 
-
-
-
-          /*  setTitle("Informacion de Usuario");
-            Misdatos fragmencl = new Misdatos();
-            Bundle args = new Bundle();
-            args.putString("textFromActivityB", texto);
-            fragmencl.setArguments(args);
-            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.panel,fragmencl,"Crear");
-            transaction.commit();*/
-
         }else if(id == R.id.nav_slideshow){
 
             setTitle("Editar perfil");
