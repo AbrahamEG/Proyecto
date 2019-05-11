@@ -134,15 +134,16 @@ public class navega extends AppCompatActivity
             transaction.replace(R.id.panel, fragmencl, "Crear");
             transaction.commit();
 
-        } else if (id == R.id.nav_send) {
-           /* setTitle("Envia tu CV");
-            CV fragmencl = new CV();
+        } else if (id == R.id.nav_tools) {
+           setTitle("Lugares");
+            lugares fragmencl = new lugares();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);
             fragmencl.setArguments(args);
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel,fragmencl,"Crear");
-            transaction.commit();*/
+            transaction.commit();
+
         } else if (id == R.id.nav_send) {
           /*  setTitle("Sugerencia de Empresa");
             Sug_Empresa fragmencl = new Sug_Empresa();
