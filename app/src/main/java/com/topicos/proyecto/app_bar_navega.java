@@ -1,59 +1,28 @@
 package com.topicos.proyecto;
 
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.ListFragment;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class lugares extends Fragment {
-
-
-    public lugares() {
-        // Required empty public constructor
-    }
-
+public class app_bar_navega extends AppCompatActivity {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_lugares, container, false);
-        final View view = inflater.inflate(R.layout.fragment_lugares, container, false);
-        TabLayout tabs = (TabLayout) view.findViewById(R.id.tab);
-
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
+    protected void onCreate(BundlesavedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        // Adding Toolbar to Main screen
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // Setting ViewPager for each Tabs
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         // Set Tabs inside Toolbar
-        TabLayout tab = (TabLayout)view.findViewById(R.id.tab);
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-
-
-
-        return view;
     }
-
+    // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
-
-        //Adapter adapter = new Adapter(getSupportFragmentManager());
-        Adapter adapter= new Adapter(getFragmentManager());
-        adapter.addFragment(new ListFragment(),"List");
-        //adapter.addFragment(new ListContentFragment(), "List");
+        Adapter adapter = new Adapter(getSupportFragmentManager());
+        adapter.addFragment(new ListContentFragment(), "List");
         adapter.addFragment(new TileContentFragment(), "Tile");
         adapter.addFragment(new CardContentFragment(), "Card");
         viewPager.setAdapter(adapter);
@@ -88,11 +57,10 @@ public class lugares extends Fragment {
         }
     }
 
-  /*  @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
         return true;
     }
 
@@ -107,6 +75,5 @@ public class lugares extends Fragment {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }*/
-
+    }
 }

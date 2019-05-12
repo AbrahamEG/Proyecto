@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.graphics.drawable.VectorDrawableCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
 import android.widget.Toast;
 
 
@@ -28,22 +33,10 @@ public class navega extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navega);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setTitle("Envia tu CV");
-                Bundle args = new Bundle();
-                //args.putString("textFromActivityB", texto);
-                Misdatos fragmencl = new Misdatos();
-                fragmencl.setArguments(args);
-                android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.panel,fragmencl,"Crear");
-                transaction.commit();
-            }
-        });
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -55,6 +48,9 @@ public class navega extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -136,12 +132,12 @@ public class navega extends AppCompatActivity
 
         } else if (id == R.id.nav_tools) {
            setTitle("Lugares");
-            lugares fragmencl = new lugares();
+         // lugar fragmencl = new lugar();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);
-            fragmencl.setArguments(args);
+            //fragmencl.setArguments(args);
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.panel,fragmencl,"Crear");
+           // transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();
 
         } else if (id == R.id.nav_send) {
