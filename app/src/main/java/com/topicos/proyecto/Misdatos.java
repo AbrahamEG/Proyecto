@@ -31,7 +31,6 @@ public class Misdatos extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_misdatos, container, false);
-        //return inflater.inflate(R.layout.fragment_misdatos, container, false);
 
         nom = (EditText) view.findViewById(R.id.txtNom);
         app = (EditText) view.findViewById(R.id.txtApp);
@@ -39,8 +38,7 @@ public class Misdatos extends Fragment {
         sex=(EditText) view.findViewById(R.id.txtSexo);
         correo=(EditText) view.findViewById(R.id.txtCorreo);
         tel=(EditText) view.findViewById(R.id.txtTel);
-        //texto=(EditText)view.findViewById(R.id.user);
-
+        //texto = getArguments().getString("textFromActivityB");
 
         consulta(view);
         return view;
@@ -48,11 +46,10 @@ public class Misdatos extends Fragment {
 
     public void consulta(View v) {
         {
-          // String text=texto.getText().toString();
             texto = getArguments().getString("textFromActivityB");
             sqlLite admin = new sqlLite(getContext(), "proyectoDesMov", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
-            Cursor fila = db.rawQuery("select nombre, app, apm,id, sexo, correo from usuario where id="+texto, null);
+            Cursor fila = db.rawQuery("select nombre, app, apm,tel, sexo, correo from usuario where id="+ texto, null);
             if (fila.moveToFirst()) {
                 nom.setText(fila.getString(0));
                 app.setText(fila.getString(1));
