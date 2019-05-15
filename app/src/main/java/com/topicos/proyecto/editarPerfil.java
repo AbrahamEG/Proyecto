@@ -45,7 +45,7 @@ public class editarPerfil extends Fragment {
         correo=(EditText) view.findViewById(R.id.tCorreo);
         button = (Button) view.findViewById(R.id.bMod);
         texto = getArguments().getString("textFromActivityB");
-      //  envio(view);
+       //envio(view);
         tel.setText(texto);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,8 +10,8 @@
 
     <FrameLayout
         android:id="@+id/panel"
-        android:layout_width="397dp"
-        android:layout_height="669dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="17dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

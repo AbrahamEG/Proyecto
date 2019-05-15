@@ -131,23 +131,21 @@ public class navega extends AppCompatActivity
             transaction.commit();
 
         } else if (id == R.id.nav_tools) {
-           setTitle("Lugares");
-         // lugar fragmencl = new lugar();
+           /*setTitle("Lugares");
+         TileContentFragment fragmencl = new TileContentFragment();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);
-            //fragmencl.setArguments(args);
-            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-           // transaction.replace(R.id.panel,fragmencl,"Crear");
-            transaction.commit();
-
-        } else if (id == R.id.nav_send) {
-          /*  setTitle("Sugerencia de Empresa");
-            Sug_Empresa fragmencl = new Sug_Empresa();
-            fragmencl.setActivity(this);
+            fragmencl.setArguments(args);
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel,fragmencl,"Crear");
             transaction.commit();*/
+
+
         } else if (id == R.id.nav_send) {
+          setTitle("Sugerencia de Empresa");
+
+        } else if (id == R.id.nav_send) {
+
            /* setTitle("Catalogo de Empresas");
             Catalogo fragmencl = new Catalogo();
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
