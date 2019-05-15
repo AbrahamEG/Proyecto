@@ -10,89 +10,88 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="8dp"
         android:text="Nombre:"
         android:textColor="#2E7D32"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toStartOf="@+id/txtNom"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="8dp"
         android:text="Apellido Pat:"
         android:textColor="#2E7D32"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toStartOf="@+id/txtApp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="9dp"
         android:text="Apellido Mat:"
         android:textColor="#2E7D32"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView16"
         app:layout_constraintEnd_toStartOf="@+id/txtApm"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="8dp"
         android:text="Sexo:"
         android:textColor="#2E7D32"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintEnd_toStartOf="@+id/txtSexo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="8dp"
         android:text="Correo:"
         android:textColor="#2E7D32"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toStartOf="@+id/txtCorreo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="54dp"
         android:text="Telefono:"
         android:textColor="#2E7D32"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/txtTel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toTopOf="@+id/txtTel" />
 
     <EditText
         android:id="@+id/txtNom"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="56dp"
@@ -102,11 +101,12 @@
         android:inputType="textPersonName"
         android:textColor="#FDFCFCFC"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtApp"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="56dp"
@@ -116,11 +116,12 @@
         android:inputType="textPersonName"
         android:textColor="#FDFCFCFC"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/txtNom" />
 
     <EditText
         android:id="@+id/txtApm"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="56dp"
@@ -130,13 +131,14 @@
         android:inputType="textPersonName"
         android:textColor="#FDFCFCFC"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/txtApp" />
 
     <EditText
         android:id="@+id/txtSexo"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="56dp"
         android:background="#1364AA"
         android:editable="false"
@@ -144,11 +146,12 @@
         android:inputType="textPersonName"
         android:textColor="#FDFCFCFC"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/txtApm" />
 
     <EditText
         android:id="@+id/txtCorreo"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="56dp"
@@ -158,11 +161,12 @@
         android:inputType="textPersonName"
         android:textColor="#FDFCFCFC"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/txtSexo" />
 
     <EditText
         android:id="@+id/txtTel"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="56dp"
@@ -172,5 +176,6 @@
         android:inputType="textPersonName"
         android:textColor="#FDFCFCFC"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
 </android.support.constraint.ConstraintLayout>
