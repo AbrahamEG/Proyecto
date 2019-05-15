@@ -22,7 +22,7 @@ import android.widget.Toast;
 public class editarPerfil extends Fragment {
 
     Spinner sex;
-    EditText nom,ap,am,tel,correo;
+    EditText nom,ap,am,tel,correo, sx;
     Button button;
     String texto;
 
@@ -45,7 +45,7 @@ public class editarPerfil extends Fragment {
         correo=(EditText) view.findViewById(R.id.tCorreo);
         button = (Button) view.findViewById(R.id.bMod);
         texto = getArguments().getString("textFromActivityB");
-       //envio(view);
+      //  envio(view);
         tel.setText(texto);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,8 +56,10 @@ public class editarPerfil extends Fragment {
 
         final ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) ArrayAdapter.createFromResource(getContext(), R.array.Opciones, android.R.layout.simple_spinner_item);
         sex.setAdapter(adapter);
+        //consulta(view);
         return view;
     }
+
 
     public void modificar(View view)
     {
@@ -99,7 +101,7 @@ public class editarPerfil extends Fragment {
     public void envio(View v) {
         {
 
-            sqlLite admin = new sqlLite(getContext(), "proyecto", null, 1);
+            sqlLite admin = new sqlLite(getContext(), "proyectoDesMov", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
             Cursor fila = db.rawQuery("select nombre,app,apm,correo from usuario where id=" + texto , null);
             if (fila.moveToFirst()) {

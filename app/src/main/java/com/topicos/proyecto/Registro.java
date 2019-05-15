@@ -1,13 +1,14 @@
 package com.topicos.proyecto;
+
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,16 +49,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         bcancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*  Intent intent =new Intent(v.getContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+              /*  Intent intent =new Intent(v.getContext(), inicio.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();*/
             }
         });
         setupActionBar();
 
-      /*  SpinnerAdapter<String> adapter = new SpinnerAdapter<String>(this,
-                android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.Opciones));
-        sex.setAdapter(adapter);*/
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Opciones, android.R.layout.simple_spinner_item);
         sex.setAdapter(adapter);
 
@@ -119,12 +117,12 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 AlertDialog.Builder builder= new AlertDialog.Builder(this);
                 builder.setCancelable(true);
                 builder.setTitle("Registro Exitoso");
-                builder.setMessage("\n Bienvenido: "+nom+" "+app+" "+apm+"\nTu usuario para ingresar al sistema es:\n"+tele);
+                builder.setMessage("\n Bienvenido: "+nom+" "+app+" "+apm+"\nTu usuario para ingresar al sistema es:\n"+email);
 
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent ListFrutas = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent ListFrutas = new Intent(getApplicationContext(), inicio.class);
                         startActivity(ListFrutas);
                     }
                 });

@@ -15,22 +15,32 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Catalogo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".navega"
-            android:label="@string/title_activity_navega"
-            android:theme="@style/NoActionBar" />
-        <activity android:name=".Registro" />
-        <activity android:name=".MainActivity">
+            android:name=".menu"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".inicio"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:parentActivityName=".inicio">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".inicio" />
+        </activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

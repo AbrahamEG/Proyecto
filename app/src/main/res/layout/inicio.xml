@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
     android:backgroundTintMode="src_over"
     android:foregroundTintMode="src_atop"
-    tools:context=".MainActivity">
+    tools:context=".inicio">
 
     <TextView
         android:id="@+id/textView"
@@ -48,11 +47,13 @@
         android:layout_marginEnd="16dp"
         android:background="#E40F9777"
         android:ems="10"
+        android:hint="Usuario"
         android:inputType="textPersonName"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 
     <EditText
         android:id="@+id/pass"
@@ -91,8 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/can" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/reg"

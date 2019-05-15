@@ -1,106 +1,173 @@
+/*
+ * Copyright (C) 2015 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.topicos.proyecto;
 
-import android.accounts.Account;
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.service.chooser.ChooserTargetService;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.graphics.drawable.VectorDrawableCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import static android.content.ContentValues.TAG;
-
-import java.security.AccessController;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
+/**
+ * Provides UI for the main screen.
+ */
+public class MainActivity extends AppCompatActivity implements Misdatos.OnFragmentInteractionListener {
 
-    Button ingreso;
-    EditText usr, pwd;
+    private DrawerLayout mDrawerLayout;
+    String texto= ChooseAccount.getControl();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
+        // Adding Toolbar to Main screen
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // Setting ViewPager for each Tabs
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+        // Set Tabs inside Toolbar
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+        // Create Navigation drawer and inlfate layout
+        //NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+       // mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        // Adding menu icon to Toolbar
+        ActionBar supportActionBar = getSupportActionBar();
+        if (supportActionBar != null) {
+            VectorDrawableCompat indicator
+                    = VectorDrawableCompat.create(getResources(), R.drawable.ic_menu, getTheme());
+            indicator.setTint(ResourcesCompat.getColor(getResources(),R.color.white,getTheme()));
+            supportActionBar.setHomeAsUpIndicator(indicator);
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        // Set behavior of Navigation drawer
+       /* navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    // This method will trigger on item Click of navigation menu
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-        TextView t=(TextView)findViewById(R.id.reg);
+                        // Set item in checked state
+                        menuItem.setChecked(true);
 
-        usr=(EditText)findViewById(R.id.user);
-        pwd=(EditText)findViewById(R.id.pass);
-        ingreso=(Button)findViewById(R.id.bingre);
+                        // TODO: handle navigation
 
-        t.setOnClickListener(new View.OnClickListener() {
+                        // Closing drawer on item click
+                        mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                });*/
+        // Adding Floating Action Button to bottom right of main view
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in= new Intent(MainActivity.this, Registro.class);
-                startActivity(in);
+                Snackbar.make(v, "Hello Snackbar!",
+                        Snackbar.LENGTH_LONG).show();
             }
         });
-
-       /* ingreso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(v.getContext(), navega.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });*/
-
-
-
-
-
     }
-    public void consulta(View view) {
-        sqlLite admin = new sqlLite(this, "proyectoDesMov", null, 1);
-        SQLiteDatabase db = admin.getWritableDatabase();
 
-        String numc = usr.getText().toString();
-        String con = pwd.getText().toString();
+    // Add Fragments to Tabs
+    private void setupViewPager(ViewPager viewPager) {
+        Adapter adapter = new Adapter(getSupportFragmentManager());
+        adapter.addFragment(new ListContentFragment(), "Lista");
+        adapter.addFragment(new TileContentFragment(), "Cuadricula");
+        adapter.addFragment(new CardContentFragment(), "Detalle");
+       // adapter.addFragment(new Misdatos(),"Perfil");
+        viewPager.setAdapter(adapter);
+    }
 
-        Cursor f=db.rawQuery("select id from usuario where id="+numc,null);
+    static class Adapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-       // Cursor fila = db.rawQuery("select ID from usuario where CORREO=" + numc , null);
-        Cursor fila1 = db.rawQuery("select cont from usuario where id=" + numc , null);
+        public Adapter(FragmentManager manager) {
+            super(manager);
+        }
 
-        if (f.moveToFirst()) {
-            if (fila1.moveToFirst())
-            {
-                String a1 =f.getString(0);
-                String a2=fila1.getString(0);
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
 
-                if(a1.equals(numc)) {
-                    if (a2.equals(con)){
-                       ChooseAccount.setControl(usr.getText().toString());
-                        Bundle bundle=new Bundle();
-                        bundle.putString("variable",numc);
-                       // Intent intent = new Intent(getApplicationContext(), Registro.class);
-                       Intent intent= new Intent(MainActivity.this,navega.class);
-                        intent.putExtras(bundle);
-                        startActivity(intent);
-                    }else{
-                        Toast.makeText(this, "Contraseña invalida", Toast.LENGTH_SHORT).show();
-                        pwd.setText("");
-                    }
-                }else{
-                    Toast.makeText(this, "El usuario es incorrecto", Toast.LENGTH_SHORT).show();
-                   pwd.setText("");
-                }
-            }
-        }else {
-            Toast.makeText(this, "No se encontraron registros", Toast.LENGTH_SHORT).show();
-            //contra.setText("");
-            db.close();
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
         }
     }
 
     @Override
-    public void onClick(View v) {
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+       // getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+      /*  if (id == R.id.action_settings) {
+
+
+        } else if (id == android.R.id.home) {
+            mDrawerLayout.openDrawer(GravityCompat.START);
+
+        } else if (id==R.id.perfil){
+
+        }*/
+        return super.onOptionsItemSelected(item);
 
     }
+
+
+
+
 }

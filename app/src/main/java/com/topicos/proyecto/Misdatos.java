@@ -46,6 +46,7 @@ public class Misdatos extends Fragment {
 
     public void consulta(View v) {
         {
+            //texto=getString(0);
             texto = getArguments().getString("textFromActivityB");
             sqlLite admin = new sqlLite(getContext(), "proyectoDesMov", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
