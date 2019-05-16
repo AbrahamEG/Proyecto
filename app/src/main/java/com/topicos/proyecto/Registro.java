@@ -117,7 +117,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 AlertDialog.Builder builder= new AlertDialog.Builder(this);
                 builder.setCancelable(true);
                 builder.setTitle("Registro Exitoso");
-                builder.setMessage("\n Bienvenido: "+nom+" "+app+" "+apm+"\nTu usuario para ingresar al sistema es:\n"+email);
+                builder.setMessage("\n Bienvenido: "+nom+" "+app+" "+apm+"\nTu usuario para ingresar al sistema es:\n"+tele);
 
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
