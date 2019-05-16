@@ -80,7 +80,7 @@ public class menu extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.mPerfil) {
-            setTitle("Editar perfil");
+            setTitle("Mis Datos");
             Misdatos fragmencl = new Misdatos();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);

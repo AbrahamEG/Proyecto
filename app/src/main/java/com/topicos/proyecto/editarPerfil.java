@@ -22,7 +22,7 @@ import android.widget.Toast;
 public class editarPerfil extends Fragment {
 
     Spinner sex;
-    EditText nom,ap,am,tel,correo, sx;
+    EditText nom,ap,am,tel,correo, sexx;
     Button button;
     String texto;
 
@@ -37,6 +37,8 @@ public class editarPerfil extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_editar_perfil, container, false);
+
+
         sex= (Spinner) view.findViewById(R.id.sSex);
         nom=(EditText) view.findViewById(R.id.tNom);
         ap=(EditText) view.findViewById(R.id.tApp);
@@ -44,8 +46,9 @@ public class editarPerfil extends Fragment {
         tel=(EditText) view.findViewById(R.id.tTel);
         correo=(EditText) view.findViewById(R.id.tCorreo);
         button = (Button) view.findViewById(R.id.bMod);
-        texto = getArguments().getString("textFromActivityB");
-      //  envio(view);
+
+     consulta(view);
+
         tel.setText(texto);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,10 +103,12 @@ public class editarPerfil extends Fragment {
 
     public void envio(View v) {
         {
+            texto = getArguments().getString("textFromActivityB");
 
             sqlLite admin = new sqlLite(getContext(), "proyectoDesMov", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
-            Cursor fila = db.rawQuery("select nombre,app,apm,correo from usuario where id=" + texto , null);
+          //  Cursor fila = db.rawQuery("select nombre,app,apm,correo from usuario where id=" + texto , null);
+            Cursor fila = db.rawQuery("select nombre, app, apm,tel, sexo, correo from usuario where id="+ texto, null);
             if (fila.moveToFirst()) {
                 nom.setText(fila.getString(0));
                 ap.setText(fila.getString(1));
@@ -125,6 +130,32 @@ public class editarPerfil extends Fragment {
 
 
     }
+
+    public void consulta(View v) {
+        {
+            //texto=getString(0);
+            texto = getArguments().getString("textFromActivityB");
+            sqlLite admin = new sqlLite(getContext(), "proyectoDesMov", null, 1);
+            SQLiteDatabase db = admin.getWritableDatabase();
+            Cursor fila = db.rawQuery("select nombre, app, apm,tel, sexo, correo from usuario where id="+ texto, null);
+            if (fila.moveToFirst()) {
+                nom.setText(fila.getString(0));
+                ap.setText(fila.getString(1));
+                am.setText(fila.getString(2));
+                tel.setText(fila.getString(3));
+                //sex.setText(fila.getString(4));
+//                sex.setSelection(Integer.parseInt(fila.getString(4)));
+                correo.setText(fila.getString(5));
+
+            }else {
+                Toast.makeText(getContext(), "No existe ningún dato", Toast.LENGTH_SHORT).show();
+                db.close();
+            }
+
+        }
+
+    }
+
 
     public void valida(View view){
         ContentValues registro = new ContentValues();
