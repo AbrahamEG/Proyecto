@@ -17,18 +17,27 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Registro extends AppCompatActivity implements View.OnClickListener {
     TextView etCampoNumero;
     Button btValidar,bcancelar;
     EditText nombre, ap, am, cont, cont1, tel, correoo;
     Spinner sex;
     Button registro;
+    DatabaseReference mDatabase;
+
+
     public static final String REGEX_EMAIL ="([A-Za-z0-9]+@+(gmail|live|hotmail|outlook)+.(com)+)";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         nombre = (EditText) findViewById(R.id.nomR);
         ap = (EditText) findViewById(R.id.appR);
         am = (EditText) findViewById(R.id.apmR);
@@ -43,6 +52,19 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
             @Override
             public void onClick(View v) {
                 altaclase(v);
+                String nomE= nombre.getText().toString();
+                String apE= ap.getText().toString();
+                String amE= am.getText().toString();
+                String telE= tel.getText().toString();
+                String correoE= correoo.getText().toString();
+                String conE= cont.getText().toString();
+                String sexE= sex.getSelectedItem().toString();
+                //String id= mDatabase.push().getKey();
+
+                Usuario user = new Usuario(nomE,apE,amE,conE,telE,correoE,sexE);
+                mDatabase.child("usuarios").child(telE).setValue(user);
+                Toast.makeText(getApplicationContext(),"Usuario registrado",Toast.LENGTH_LONG).show();
+
             }
         });
 

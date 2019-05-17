@@ -67,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
 
         placePictures.recycle();
 
-        Button reserva=(Button)findViewById(R.id.buttonR);
+        Button reserva=(Button)findViewById(R.id.buttonRe);
         reserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
