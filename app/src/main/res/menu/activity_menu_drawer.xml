@@ -22,14 +22,19 @@
             android:title="Restaurantes" />
 
         <item
+            android:id="@+id/mSugerencias"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Comentarios y Sugerencias" />
+
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Mis Comentarios" />
+
+        <item
             android:id="@+id/mSalir"
             android:icon="@drawable/ic_menu_manage"
             android:title="Salir" />
-
-        <item
-            android:id="@+id/mSugerencias"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Sugerencias" />
     </group>
 
     <item android:title="Communicate">
@@ -38,10 +43,7 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+
         </menu>
     </item>
 

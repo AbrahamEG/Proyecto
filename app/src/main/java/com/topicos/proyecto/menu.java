@@ -122,6 +122,11 @@ public class menu extends AppCompatActivity
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel, fragmencl, "Crear");
             transaction.commit();
+        } else if (id==R.id.mSalir){
+           // super.onDestroy();
+           // android.os.Process.killProcess(android.os.Process.myPid());
+            //finishAffinity();
+            super.finishAffinity();
         }
         if (id == R.id.nav_share) {
 
