@@ -87,5 +87,15 @@
         <item>@drawable/f</item>
     </array>
 
+    <array name="sitio_web">
+    <item>www.sitio.com</item>
+    <item>www.sitio.com</item>
+    <item>www.sitio.com</item>
+    <item>www.sitio.com</item>
+    <item>www.sitio.com</item>
+        <item>www.sitio.com</item>
+    </array>
+
+
 
 </resources>

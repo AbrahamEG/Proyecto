@@ -101,6 +101,27 @@
                 android:layout_height="wrap_content"
                 tools:text="@string/detail_location" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/md_keylines"
+                android:layout_marginBottom="@dimen/md_keylines"
+                android:text="Sitio Web"
+                android:textColor="?attr/colorAccent"
+                android:textSize="@dimen/article_titles" />
+
+            <TextView
+                android:id="@+id/sitioweb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/detail_location" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
             <Button
                 android:id="@+id/buttonRe"
                 android:layout_width="wrap_content"

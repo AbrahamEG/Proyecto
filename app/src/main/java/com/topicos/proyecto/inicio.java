@@ -78,7 +78,7 @@ private TextInputEditText usr, pwd;
                             Bundle bundle = new Bundle();
                             bundle.putString("variable", numc);
                             //Intent intent = new Intent(getApplicationContext(), Registro.class);
-                            Intent intent = new Intent(inicio.this, MainActivity.class);
+                            Intent intent = new Intent(inicio.this, menu.class);
                             intent.putExtras(bundle);
                             startActivity(intent);
                         } else {

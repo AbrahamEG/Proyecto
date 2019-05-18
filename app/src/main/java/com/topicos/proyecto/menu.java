@@ -103,7 +103,7 @@ public class menu extends AppCompatActivity
 
 
         } else if (id == R.id.mCatalogo) {
-            setTitle("Catalogo");
+            setTitle("Restaurantes");
             CardContentFragment fragmencl = new CardContentFragment();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);

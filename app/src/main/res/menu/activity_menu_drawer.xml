@@ -19,7 +19,7 @@
         <item
             android:id="@+id/mCatalogo"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Catalogo" />
+            android:title="Restaurantes" />
 
         <item
             android:id="@+id/mSalir"

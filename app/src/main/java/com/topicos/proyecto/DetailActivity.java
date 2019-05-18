@@ -16,6 +16,9 @@
 
 package com.topicos.proyecto;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -39,6 +42,7 @@ public class DetailActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -64,6 +68,11 @@ public class DetailActivity extends AppCompatActivity {
         TypedArray placePictures = resources.obtainTypedArray(R.array.places_picture);
         ImageView placePicutre = (ImageView) findViewById(R.id.image);
         placePicutre.setImageDrawable(placePictures.getDrawable(postion % placePictures.length()));
+
+        String[] sitio_web =resources.getStringArray(R.array.sitio_web);
+        TextView sitioWeb=(TextView) findViewById(R.id.sitioweb);
+        sitioWeb.setText(sitio_web[postion % sitio_web.length]);
+
 
         placePictures.recycle();
 
