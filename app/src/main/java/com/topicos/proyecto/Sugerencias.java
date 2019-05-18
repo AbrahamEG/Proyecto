@@ -29,7 +29,7 @@ public class Sugerencias extends Fragment {
 
     String texto;
     TextView nom,app,apm,tel,correo;
-    EditText comtari;
+    TextView comtari;
     Spinner res;
     RatingBar cali;
     Button enviar;
@@ -52,7 +52,7 @@ public class Sugerencias extends Fragment {
         tel=(TextView)view.findViewById(R.id.tViewTel);
         correo=(TextView)view.findViewById(R.id.tViewCorreo);
         res=(Spinner)view.findViewById(R.id.sRes);
-        comtari=(EditText)view.findViewById(R.id.com);
+        comtari=(TextView)view.findViewById(R.id.com);
         cali=(RatingBar)view.findViewById(R.id.ratingBar2);
         tel.setText(texto);
         enviar=(Button)view.findViewById(R.id.btnenvia);
@@ -120,8 +120,6 @@ public class Sugerencias extends Fragment {
         }else if (res.equals(" ")){
             Toast.makeText(getContext(), "Elige un establecimiento",Toast.LENGTH_SHORT).show();
         }else {
-
-            registro.put("id","1");
             registro.put("nombre", n);
             registro.put("app", ap);
             registro.put("apm", amm);

@@ -56,20 +56,21 @@
     <Spinner
         android:id="@+id/sRes"
         android:layout_width="250dp"
-
+        android:layout_marginBottom="16dp"
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:textAlignment="center" />
 
     <EditText
         android:id="@+id/com"
-        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"
         android:layout_width="300dp"
         android:layout_height="150dp"
+        android:ems="10"
+        android:gravity="start|top"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="@dimen/md_keylines"
-        android:hint="Sugerencias o comentarios"
-        android:textAlignment="center" />
+        android:layout_marginBottom="16dp"
+        android:hint="Comentarios..."
+        android:inputType="textMultiLine" />
 
     <RatingBar
         android:id="@+id/ratingBar2"
