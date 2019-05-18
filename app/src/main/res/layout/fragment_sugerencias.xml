@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Sugerencias">
+
+    <TextView
+        android:id="@+id/tViewNom"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="@dimen/md_keylines"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tViewAp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="50dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tViewAm"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="50dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tViewTel"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="50dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tViewCorreo"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="@dimen/md_keylines"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/sRes"
+        android:layout_width="250dp"
+
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/com"
+        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="@dimen/md_keylines"
+        android:hint="Sugerencias o comentarios"
+        android:textAlignment="center" />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:numStars="5"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btnenvia"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="140dp"
+        android:text="Enviar" />
+
+</LinearLayout>

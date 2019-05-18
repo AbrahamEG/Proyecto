@@ -113,11 +113,30 @@ public class menu extends AppCompatActivity
             transaction.commit();
 
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id==R.id.mSugerencias) {
+            setTitle("Sugerencias");
+            Sugerencias fragmencl = new Sugerencias();
+            Bundle args = new Bundle();
+            args.putString("textFromActivityB", texto);
+            fragmencl.setArguments(args);
+            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.panel, fragmencl, "Crear");
+            transaction.commit();
         }
+        if (id == R.id.nav_share) {
+
+            } else if (id == R.id.nav_send) {
+
+            setTitle("Sugerencias");
+          listar fragmencl = new listar();
+            Bundle args = new Bundle();
+            args.putString("textFromActivityB", texto);
+            fragmencl.setArguments(args);
+            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.panel, fragmencl, "Crear");
+            transaction.commit();
+
+            }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

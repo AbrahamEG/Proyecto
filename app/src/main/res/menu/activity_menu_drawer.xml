@@ -25,6 +25,11 @@
             android:id="@+id/mSalir"
             android:icon="@drawable/ic_menu_manage"
             android:title="Salir" />
+
+        <item
+            android:id="@+id/mSugerencias"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Sugerencias" />
     </group>
 
     <item android:title="Communicate">

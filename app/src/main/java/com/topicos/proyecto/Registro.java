@@ -98,7 +98,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
 
     public void altaclase(View view)
     {
-        sqlLite admin = new sqlLite(this,"proyectoDesMov",null,1);
+        sqlLite admin = new sqlLite(this,"proyectoDesMovF",null,1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String nom = nombre.getText().toString();

@@ -50,7 +50,7 @@ private TextInputEditText usr, pwd;
 
     }
     public void consulta(View view) {
-        sqlLite admin = new sqlLite(this, "proyectoDesMov", null, 1);
+        sqlLite admin = new sqlLite(this, "proyectoDesMovF", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String numc = usr.getText().toString();

@@ -66,7 +66,7 @@ public class editarPerfil extends Fragment {
 
     public void modificar(View view)
     {
-        sqlLite admin = new sqlLite(getContext(),"proyectoDesMov",null,1);
+        sqlLite admin = new sqlLite(getContext(),"proyectoDesMovF",null,1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String n = nom.getText().toString();
@@ -105,7 +105,7 @@ public class editarPerfil extends Fragment {
         {
             texto = getArguments().getString("textFromActivityB");
 
-            sqlLite admin = new sqlLite(getContext(), "proyectoDesMov", null, 1);
+            sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
           //  Cursor fila = db.rawQuery("select nombre,app,apm,correo from usuario where id=" + texto , null);
             Cursor fila = db.rawQuery("select nombre, app, apm,tel, sexo, correo from usuario where id="+ texto, null);
@@ -135,7 +135,7 @@ public class editarPerfil extends Fragment {
         {
             //texto=getString(0);
             texto = getArguments().getString("textFromActivityB");
-            sqlLite admin = new sqlLite(getContext(), "proyectoDesMov", null, 1);
+            sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
             Cursor fila = db.rawQuery("select nombre, app, apm,tel, sexo, correo from usuario where id="+ texto, null);
             if (fila.moveToFirst()) {
