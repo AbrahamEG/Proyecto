@@ -1,5 +1,6 @@
 package com.topicos.proyecto;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -7,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -67,7 +69,20 @@ public class menu extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            AlertDialog.Builder builder= new AlertDialog.Builder(this);
+            builder.setCancelable(true);
+            builder.setTitle("ACERCA DE...");
+            builder.setMessage("\nDesarrollado por:\n"+
+                    "  -González Pérez José María\n" +
+                    "  -Estrada Garcia Abraham\n\n"+
+                    "Desarrollo Movil");
+            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                }
+            });
+            AlertDialog alertDialog=builder.create();
+            alertDialog.show();
         }
 
         return super.onOptionsItemSelected(item);
