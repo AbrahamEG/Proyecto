@@ -36,6 +36,8 @@ import android.widget.TextView;
  */
 public class DetailActivity extends AppCompatActivity {
 
+    String texto= ChooseAccount.getControl();
+
     public static final String EXTRA_POSITION = "position";
 
     @Override
@@ -80,8 +82,7 @@ public class DetailActivity extends AppCompatActivity {
         reserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in= new Intent(DetailActivity.this,menu.class);
-                startActivity(in);
+
             }
         });
     }

@@ -10,10 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.RatingBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,7 +67,7 @@ public class listar extends Fragment {
         {
             //texto=getString(0);
             texto = getArguments().getString("textFromActivityB");
-            sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF", null, 1);
+            sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF1", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
             Cursor fila = db.rawQuery("select nombre, app, apm,tel, correo, restaurante, comentario,calificacion from comentarios where tel="+ texto, null);
             if (fila.moveToFirst()) {
@@ -94,7 +91,7 @@ public class listar extends Fragment {
     }
 
     public Cursor getRegistrosProductos(){
-        sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF", null, 1);
+        sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF1", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
         return db.rawQuery("SELECT * FROM comentarios",null);
     }

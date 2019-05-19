@@ -8,6 +8,13 @@
         <item></item>
     </string-array>
 
+    <string-array name="Mesas">
+        <item>2 personas</item>
+        <item>4 personas</item>
+        <item>6 personas</item>
+        <item></item>
+    </string-array>
+
 
     <string-array name="places">
         <item>Lievo</item>

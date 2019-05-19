@@ -78,9 +78,12 @@ public class CardContentFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
+                    Context context=v.getContext();
+                    Intent intent = new Intent(Intent.ACTION_SENDTO);
+                    intent.setType("text/plain");
+                   // intent.putExtra(Intent.EXTRA_TEXT, "Te comparto la ubicacion del restaurante:  "+ name.getText()+ "\n"+ description.getText());
+                    context.startActivity(Intent.createChooser(intent, "Share with"));
 
-                    // Snackbar.make(v, "Action is pressed",
-                           // Snackbar.LENGTH_LONG).show();
                 }
             });
 
@@ -89,7 +92,7 @@ public class CardContentFragment extends Fragment {
             favoriteImageButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(v, "Added to Favorite",
+                    Snackbar.make(v, "Me gusta",
                             Snackbar.LENGTH_LONG).show();
 
                 }

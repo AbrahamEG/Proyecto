@@ -49,7 +49,7 @@ public class Misdatos extends Fragment {
         {
             //texto=getString(0);
             texto = getArguments().getString("textFromActivityB");
-            sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF", null, 1);
+            sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF1", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
             Cursor fila = db.rawQuery("select nombre, app, apm,tel, sexo, correo from usuario where id="+ texto, null);
             if (fila.moveToFirst()) {

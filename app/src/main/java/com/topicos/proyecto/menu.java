@@ -112,7 +112,14 @@ public class menu extends AppCompatActivity
 
 
         } else if (id == R.id.mReserva) {
-
+            setTitle("Reservar");
+            Reservar fragmencl = new Reservar();
+            Bundle args = new Bundle();
+            args.putString("textFromActivityB", texto);
+            fragmencl.setArguments(args);
+            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.panel, fragmencl, "Crear");
+            transaction.commit();
 
         } else if (id == R.id.mCatalogo) {
             setTitle("Restaurantes");
@@ -123,7 +130,6 @@ public class menu extends AppCompatActivity
             android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.panel, fragmencl, "Crear");
             transaction.commit();
-
 
         } else if (id==R.id.mSugerencias) {
             setTitle("Sugerencias");
@@ -139,8 +145,17 @@ public class menu extends AppCompatActivity
            // android.os.Process.killProcess(android.os.Process.myPid());
             //finishAffinity();
             super.finishAffinity();
-        }
-        if (id == R.id.nav_share) {
+        } else if (id==R.id.mMisReserva){
+            setTitle("Mis Reservaciones");
+            misreservaciones fragmencl = new misreservaciones();
+            Bundle args = new Bundle();
+            args.putString("textFromActivityB", texto);
+            fragmencl.setArguments(args);
+            android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.panel, fragmencl, "Crear");
+            transaction.commit();
+
+        } if (id == R.id.nav_share) {
 
             } else if (id == R.id.nav_send) {
 

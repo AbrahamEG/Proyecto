@@ -4,6 +4,7 @@ package com.topicos.proyecto;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -24,18 +25,15 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Sugerencias extends Fragment {
-
-
+public class Reservar extends Fragment {
     String texto;
-    TextView nom,app,apm,tel,correo;
-    TextView comtari;
-    Spinner res;
+    EditText nom,app,apm,tel,correo;
+    EditText Rfecha,Rhora;
+    Spinner res, mesa;
     RatingBar cali;
-    Button enviar;
+    Button reserva;
 
-
-    public Sugerencias() {
+    public Reservar() {
         // Required empty public constructor
     }
 
@@ -44,19 +42,20 @@ public class Sugerencias extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_sugerencias, container, false);
+        final View view = inflater.inflate(R.layout.fragment_reservar, container, false);
 
-        nom=(TextView) view.findViewById(R.id.tViewNom);
-        apm=(TextView)view.findViewById(R.id.tViewAm);
-        app=(TextView)view.findViewById(R.id.tViewAp);
-        tel=(TextView)view.findViewById(R.id.tViewTel);
-        correo=(TextView)view.findViewById(R.id.tViewCorreo);
-        res=(Spinner)view.findViewById(R.id.sRes);
-        comtari=(TextView)view.findViewById(R.id.com);
-        cali=(RatingBar)view.findViewById(R.id.ratingBar2);
+        nom=(EditText) view.findViewById(R.id.Rnom);
+        apm=(EditText)view.findViewById(R.id.RApp);
+        app=(EditText)view.findViewById(R.id.RApm);
+        tel=(EditText)view.findViewById(R.id.RTel);
+        correo=(EditText)view.findViewById(R.id.RCorreo);
+        res=(Spinner)view.findViewById(R.id.sEstablecimiento);
+        mesa=(Spinner)view.findViewById(R.id.sMesas);
+       Rfecha=(EditText)view.findViewById(R.id.RFecha);
+        Rhora=(EditText)view.findViewById(R.id.RHora);
         tel.setText(texto);
-        enviar=(Button)view.findViewById(R.id.btnenvia);
-        enviar.setOnClickListener(new View.OnClickListener() {
+        reserva=(Button)view.findViewById(R.id.btnReserva);
+        reserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 enviar(v);
@@ -64,11 +63,29 @@ public class Sugerencias extends Fragment {
         });
 
 
-
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.places, android.R.layout.simple_spinner_item);
         res.setAdapter(adapter);
 
+        final ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getContext(), R.array.Mesas, android.R.layout.simple_spinner_item);
+       mesa.setAdapter(adapter2);
+
         consulta(view);
+
+        Rfecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment=new PickersActivity();
+                newFragment.show(getFragmentManager(),"g");
+            }
+        });
+
+        Rhora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment=new PickersActivity2();
+                newFragment.show(getFragmentManager(),"g");
+            }
+        });
 
         return view;
     }
@@ -107,18 +124,14 @@ public class Sugerencias extends Fragment {
         String amm = apm.getText().toString();
         String corre=correo.getText().toString();
         String resta=res.getSelectedItem().toString();
-        String comenta=comtari.getText().toString();
-        Float ratingNumber = cali.getRating ();
-        String calif = Float.toString(ratingNumber);
+        String fe=Rfecha.getText().toString();
+        String ho=Rhora.getText().toString();
+        String me=mesa.getSelectedItem().toString();
 
         ContentValues registro = new ContentValues();
 
-        if (comenta.isEmpty()) {
+        if (fe.isEmpty()||ho.isEmpty()||n.isEmpty()||ap.isEmpty()||amm.isEmpty()||corre.isEmpty()||tele.isEmpty()) {
             Toast.makeText(getContext(), "Hay campos incorrectos o vacios", Toast.LENGTH_SHORT).show();
-        }else if (calif.isEmpty()||calif.equals("0")) {
-            Toast.makeText(getContext(), "Proporciona una calificacion", Toast.LENGTH_SHORT).show();
-        }else if (res.equals(" ")){
-            Toast.makeText(getContext(), "Elige un establecimiento",Toast.LENGTH_SHORT).show();
         }else {
             registro.put("nombre", n);
             registro.put("app", ap);
@@ -126,16 +139,18 @@ public class Sugerencias extends Fragment {
             registro.put("tel", tele);
             registro.put("correo", corre);
             registro.put("restaurante", resta);
-            registro.put("comentario", comenta);
-            registro.put("calificacion", calif);
-            db.insert("comentarios", null, registro);
+            registro.put("fecha", fe);
+            registro.put("hora", ho);
+            registro.put("mesa",me);
+            db.insert("reservaciones", null, registro);
 
             db.close();
 
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             builder.setCancelable(true);
-            builder.setTitle("Comentario Enviado");
-            builder.setMessage("\nGracias por su atencion: " + n + " " + ap + " " + amm);
+            builder.setTitle("Reservacion realizada");
+            builder.setMessage("\nGracias por su reservacion: " + n + " " + ap + " " + amm+
+                    "\nReservacion para el dia: "+fe+ " A las: "+ho);
 
             builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                 @Override

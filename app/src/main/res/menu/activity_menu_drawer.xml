@@ -17,6 +17,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Reservar" />
         <item
+            android:id="@+id/mMisReserva"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mis Reservaciones" />
+        <item
             android:id="@+id/mCatalogo"
             android:icon="@drawable/ic_menu_manage"
             android:title="Restaurantes" />
