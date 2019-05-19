@@ -61,6 +61,20 @@
             android:singleLine="true"
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/article_subheading" />
+        <TextView
+            android:id="@+id/card_web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_image"
+            android:layout_marginLeft="@dimen/md_keylines"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="@dimen/md_keylines"
+            tools:text="www.sitio.com"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/dark_grey"
+            android:textSize="@dimen/article_subheading" />
 
         <Button
             android:id="@+id/action_button"
@@ -68,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/card_text"
-            android:text="Reserva"
+            android:text="Sitio Web"
             android:textColor="?attr/colorPrimary" />
 
         <ImageButton

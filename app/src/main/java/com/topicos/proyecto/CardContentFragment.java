@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -56,12 +57,15 @@ public class CardContentFragment extends Fragment {
         public TextView name;
         public TextView description;
         public TextView direccion;
+        public TextView wwweb;
+
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_card, parent, false));
             picture = (ImageView) itemView.findViewById(R.id.card_image);
             name = (TextView) itemView.findViewById(R.id.card_title);
             description = (TextView) itemView.findViewById(R.id.card_text);
             direccion=(TextView) itemView.findViewById(R.id.place_location);
+            wwweb=(TextView)itemView.findViewById(R.id.card_web);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -78,11 +82,11 @@ public class CardContentFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
+                    String nombr= wwweb.getText().toString();
                     Context context=v.getContext();
-                    Intent intent = new Intent(Intent.ACTION_SENDTO);
-                    intent.setType("text/plain");
-                   // intent.putExtra(Intent.EXTRA_TEXT, "Te comparto la ubicacion del restaurante:  "+ name.getText()+ "\n"+ description.getText());
-                    context.startActivity(Intent.createChooser(intent, "Share with"));
+                    Uri uri = Uri.parse("http://"+nombr);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    context.startActivity(intent);
 
                 }
             });
@@ -125,12 +129,14 @@ public class CardContentFragment extends Fragment {
 
         private final String[] mPlaces;
         private final String[] mPlaceDesc;
+        private final String[] mWebs;
         private final Drawable[] mPlacePictures;
 
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
             mPlaces = resources.getStringArray(R.array.places);
             mPlaceDesc = resources.getStringArray(R.array.place_desc);
+            mWebs=resources.getStringArray(R.array.sitio_web);
             TypedArray a = resources.obtainTypedArray(R.array.places_picture);
             mPlacePictures = new Drawable[a.length()];
             for (int i = 0; i < mPlacePictures.length; i++) {
@@ -149,6 +155,7 @@ public class CardContentFragment extends Fragment {
             holder.picture.setImageDrawable(mPlacePictures[position % mPlacePictures.length]);
             holder.name.setText(mPlaces[position % mPlaces.length]);
             holder.description.setText(mPlaceDesc[position % mPlaceDesc.length]);
+            holder.wwweb.setText(mWebs[position % mWebs.length]);
         }
 
         @Override
