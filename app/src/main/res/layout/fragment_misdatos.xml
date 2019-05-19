@@ -1,176 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Misdatos">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="55dp"
+        android:src="@drawable/a"
+        tools:srcCompat="@drawable/usr" />
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginEnd="57dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:text="Nombre:"
         android:textColor="#2E7D32"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtNom"
-        app:layout_constraintEnd_toStartOf="@+id/txtNom"
-        app:layout_constraintStart_toStartOf="parent" />
+
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtNom"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="55dp"
+        android:background="#001364AA"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="#3693A0"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="1.8"
+        android:textColor="#030000" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="39dp"
         android:text="Apellido Pat:"
         android:textColor="#2E7D32"
         android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtApp"
-        app:layout_constraintEnd_toStartOf="@+id/txtApp"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/txtApp"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="55dp"
+        android:background="#001364AA"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="#55A9B4"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="1.8"
+        android:textColor="#030000" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
+        android:layout_marginStart="50dp"
         android:layout_marginEnd="36dp"
+        android:layout_marginTop="10dp"
         android:text="Apellido Mat:"
         android:textColor="#2E7D32"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtApm"
-        app:layout_constraintEnd_toStartOf="@+id/txtApm"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtApm"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="55dp"
+        android:background="#001364AA"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="#55A9B4"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="1.8"
+        android:textColor="#030000" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="58dp"
         android:text="Sexo:"
         android:textColor="#2E7D32"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtSexo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtSexo"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="55dp"
+        android:background="#001364AA"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="#55A9B4"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="1.8"
+        android:textColor="#030000" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="43dp"
         android:text="Correo:"
         android:textColor="#2E7D32"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtCorreo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtCorreo"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="55dp"
+        android:background="#001364AA"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:shadowColor="#55A9B4"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="1.8"
+        android:textColor="#030000" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="43dp"
         android:text="Telefono:"
         android:textColor="#2E7D32"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtTel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/txtNom"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="55dp"
-        android:background="#001364AA"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#030000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtApp"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="55dp"
-        android:background="#001364AA"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#030000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/txtNom" />
-
-    <EditText
-        android:id="@+id/txtApm"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="55dp"
-        android:background="#001364AA"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#030000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/txtApp" />
-
-    <EditText
-        android:id="@+id/txtSexo"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="55dp"
-        android:background="#001364AA"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#030000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView16" />
-
-    <EditText
-        android:id="@+id/txtCorreo"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="55dp"
-        android:background="#001364AA"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#030000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView17" />
-
-    <EditText
+    <TextView
         android:id="@+id/txtTel"
-        android:layout_width="180dp"
-        android:layout_height="30dp"
+        style="@android:style/Widget.Material.Light.AutoCompleteTextView"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="55dp"
         android:background="#001364AA"
-        android:editable="false"
+        android:editable="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textColor="#030000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView18" />
-</android.support.constraint.ConstraintLayout>
+        android:shadowColor="#55A9B4"
+        android:shadowDx="3"
+        android:shadowDy="2"
+        android:shadowRadius="1.8"
+        android:textColor="#030000" />
+
+
+</LinearLayout>

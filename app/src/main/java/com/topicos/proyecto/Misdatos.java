@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -18,7 +19,7 @@ import android.widget.Toast;
 public class Misdatos extends Fragment {
     String texto;
 
-    EditText nom,app,apm,sex,correo,tel;
+    TextView nom,app,apm,sex,correo,tel;
 
 
     public Misdatos() {
@@ -32,12 +33,12 @@ public class Misdatos extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_misdatos, container, false);
 
-        nom = (EditText) view.findViewById(R.id.txtNom);
-        app = (EditText) view.findViewById(R.id.txtApp);
-        apm=(EditText) view.findViewById(R.id.txtApm);
-        sex=(EditText) view.findViewById(R.id.txtSexo);
-        correo=(EditText) view.findViewById(R.id.txtCorreo);
-        tel=(EditText) view.findViewById(R.id.txtTel);
+        nom = (TextView) view.findViewById(R.id.txtNom);
+        app = (TextView) view.findViewById(R.id.txtApp);
+        apm=(TextView) view.findViewById(R.id.txtApm);
+        sex=(TextView) view.findViewById(R.id.txtSexo);
+        correo=(TextView) view.findViewById(R.id.txtCorreo);
+        tel=(TextView) view.findViewById(R.id.txtTel);
         //texto = getArguments().getString("textFromActivityB");
 
         consulta(view);
