@@ -61,10 +61,6 @@ public class MainActivity extends AppCompatActivity implements Misdatos.OnFragme
         // Set Tabs inside Toolbar
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        // Create Navigation drawer and inlfate layout
-        //NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-       // mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        // Adding menu icon to Toolbar
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             VectorDrawableCompat indicator
@@ -153,16 +149,7 @@ public class MainActivity extends AppCompatActivity implements Misdatos.OnFragme
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-      /*  if (id == R.id.action_settings) {
 
-
-        } else if (id == android.R.id.home) {
-            mDrawerLayout.openDrawer(GravityCompat.START);
-
-        } else if (id==R.id.perfil){
-
-        }*/
         return super.onOptionsItemSelected(item);
 
     }
