@@ -41,6 +41,15 @@ public class menu extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        setTitle("Restaurantes");
+        CardContentFragment fragmencl = new CardContentFragment();
+        Bundle args = new Bundle();
+        args.putString("textFromActivityB", texto);
+        fragmencl.setArguments(args);
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.panel, fragmencl, "Crear");
+        transaction.commit();
     }
 
     @Override
