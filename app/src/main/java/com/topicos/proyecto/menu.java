@@ -81,7 +81,8 @@ public class menu extends AppCompatActivity
             builder.setMessage("\nDesarrollado por:\n"+
                     "  -González Pérez José María\n" +
                     "  -Estrada Garcia Abraham\n\n"+
-                    "Desarrollo Movil");
+                    "  -Esteban Dionisio Daniel \n\n"+
+                    "   Desarrollo Movil");
             builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {

@@ -28,7 +28,7 @@ import android.widget.Toast;
 public class Reservar extends Fragment {
     String texto;
     EditText nom,app,apm,tel,correo;
-    EditText Rfecha,Rhora;
+TextView Rfecha,Rhora;
     Spinner res, mesa;
     RatingBar cali;
     Button reserva;
@@ -51,8 +51,8 @@ public class Reservar extends Fragment {
         correo=(EditText)view.findViewById(R.id.RCorreo);
         res=(Spinner)view.findViewById(R.id.sEstablecimiento);
         mesa=(Spinner)view.findViewById(R.id.sMesas);
-       Rfecha=(EditText)view.findViewById(R.id.RFecha);
-        Rhora=(EditText)view.findViewById(R.id.RHora);
+       Rfecha=(TextView)view.findViewById(R.id.RFecha);
+        Rhora=(TextView)view.findViewById(R.id.RHora);
         tel.setText(texto);
         reserva=(Button)view.findViewById(R.id.btnReserva);
         reserva.setOnClickListener(new View.OnClickListener() {
