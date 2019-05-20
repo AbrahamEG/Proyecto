@@ -6,28 +6,28 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/mPerfil"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/datos"
             android:title="Mi Perfil" />
         <item
             android:id="@+id/mEditarP"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/edit"
             android:title="Editar Perfil" />
         <item
             android:id="@+id/mReserva"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/reserva"
             android:title="Reservar" />
         <item
             android:id="@+id/mMisReserva"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/list"
             android:title="Mis Reservaciones" />
         <item
             android:id="@+id/mCatalogo"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/lugar"
             android:title="Restaurantes" />
 
         <item
             android:id="@+id/mSugerencias"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/idea"
             android:title="Comentarios y Sugerencias" />
 
         <item
@@ -37,7 +37,7 @@
 
         <item
             android:id="@+id/mSalir"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/cerrar"
             android:title="Salir" />
     </group>
 
