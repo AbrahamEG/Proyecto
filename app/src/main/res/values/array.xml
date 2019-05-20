@@ -19,10 +19,12 @@
     <string-array name="places">
         <item>Lievo</item>
         <item>Hacienda Olivos</item>
-        <item>Bistro mecha San Carlos</item>
+        <item>Bistro Mecha San Carlos</item>
         <item>Galpon Argentino Metepec</item>
         <item>Texas Ribs Metepec</item>
         <item>Alamillo</item>
+        <item>Finca de Adobe</item>
+        <item>Cambalache</item>
     </string-array>
     <string-array name="place_desc">
         <item>Paseo San Isidro 400, Metepec</item>
@@ -31,6 +33,8 @@
         <item>Paseo del Calvario, Metepec</item>
         <item>Blvard Toluca Metepec 400</item>
         <item>Lic Benito Juarez 226 Locall 11</item>
+        <item> Calle Leona Vicario 1330, Los Cedros, 52169 Metepec, Méx.</item>
+        <item>Av Baja Velocidad Km 5.2, San Jeronimo Chicahualco, 52170 Toluca de Lerdo, Méx.</item>
     </string-array>
     <string-array name="place_details">
         <item>Lugar muy agradable y limpio. El desayuno con buenas porciones y buena sazón.
@@ -49,24 +53,24 @@
             de venta de vinos y otros ofrecen platos de cocina internacional. El término "Bistró" se ha
             extendido a otros países, en los que se suele referir a establecimientos de reciente creación
             cuya cocina se basa en platos clásicos.
-        </item>Espacio sofisticado con cuadros de arte que ofrece cortes de carnes y sabores de Argentina,
-        Italia y México.
+        </item>
         <item>
-            dhuhuhuihggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggs
-            fbubfjaksssssssssssssssssssssssssssssssssssssssssj
-            affaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            affaaaaaaaaa
+            Espacio sofisticado con cuadros de arte que ofrece cortes de carnes y sabores de Argentina,
+        Italia y México.
         </item>
         <item>Todas nuestras costillas están cocinadas con paciencia a fuego lento y ahumadas a la perfección.
             ¡Casi se desprenden del hueso de lo tiernas, jugosas y deliciosas! Incluyen 2 guarniciones de tu
             elección: Papa al horno, frijoles dulce, ensalada de col, mac y cheese, puré de papa, papas a la
             francesa, elote dulce, arroz de la casa
         </item>
+        <item>Comida mexiquense ofrecida en buffet o a la carta en un comedor y terraza con vista a un extenso jardín.</item>
         <item>Restaurante fundado en 2003,  el cual, con el paso del tiempo ha evolucionado
             crecido, encontrando una filosofía distinta a la oferta gastronómica que existe en Toluca y Metepec.
             Nuestra cocina es de raíz mexicana, pero complementada con algunos platillos y técnicas internacionales,
             en donde los ingredientes y la creatividad de la cocina son lo más importante.
             Los ingredientes que se utilizan son frescos, de temporada , de origen local y orgánicos cuando se puede.
+        </item>
+        <item>Asador con menú de cortes y platos argentinos servidos en un comedor casual decorado en madera y piel.
         </item>
     </string-array>
     <string-array name="place_locations">
@@ -76,6 +80,8 @@
         <item>Paseo del Calvario, Metepec</item>
         <item>Blvard Toluca Metepec 400</item>
         <item>Lic Benito Juarez 226 Locall 11</item>
+        <item> Calle Leona Vicario 1330, Los Cedros, 52169 Metepec, Méx.</item>
+        <item>Av Baja Velocidad Km 5.2, San Jeronimo Chicahualco, 52170 Toluca de Lerdo, Méx.</item>
     </string-array>
     <array name="place_avator">
         <item>@drawable/a_lievo</item>
@@ -84,6 +90,8 @@
         <item>@drawable/d_galpon</item>
         <item>@drawable/e_texasribs</item>
         <item>@drawable/f_alamillo</item>
+        <item>@drawable/g_lafincadeadobe</item>
+        <item>@drawable/h_cambalache</item>
     </array>
     <array name="places_picture">
         <item>@drawable/a</item>
@@ -92,15 +100,38 @@
         <item>@drawable/d</item>
         <item>@drawable/e</item>
         <item>@drawable/f</item>
+        <item>@drawable/g</item>
+        <item>@drawable/h</item>
     </array>
 
     <array name="sitio_web">
     <item>www.google.com</item>
     <item>www.facebook.com</item>
-    <item>www.youtube.com</item>
     <item>www.microsoft.com</item>
+        <item>www.texasribs.com</item>
     <item>www.dell.com</item>
-        <item>www.ittol.com</item>
+        <item>www.alamillorestaurante.com</item>
+        <item>www.fincadeadobe.com</item>
+     <item>www.cambalache.com</item>
+    </array>
+
+    <array name="horarios">
+        <item>10:00hrs a 19:00hrs
+                Lunes a Domingo</item>
+        <item>12:00hrs a 21:00hrs
+                Lunes a Domingo</item>
+        <item>13:00hrs a 18:00hrs
+                Lunes a Domingo</item>
+        <item>11:00hrs a 22:00hrs
+                Lunes a Domingo </item>
+        <item>15:00hrs a 19:00hrs
+                Lunes a Domingo</item>
+        <item>14:00hrs a 18:00hrs
+                Lunes a Domingo </item>
+        <item>16:00hrs a 23:00hrs
+                Lunes a Domingo</item>
+        <item>12:00hrs a 18:00hrs
+                Lunes a Domingo </item>
     </array>
 
 

@@ -75,6 +75,10 @@ public class DetailActivity extends AppCompatActivity {
         TextView sitioWeb=(TextView) findViewById(R.id.sitioweb);
         sitioWeb.setText(sitio_web[postion % sitio_web.length]);
 
+        String[] horarios =resources.getStringArray(R.array.horarios);
+        TextView hora=(TextView) findViewById(R.id.horaRes);
+        hora.setText(horarios[postion % horarios.length]);
+
 
         placePictures.recycle();
 
