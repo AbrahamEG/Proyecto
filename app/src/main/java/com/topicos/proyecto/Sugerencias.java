@@ -72,10 +72,11 @@ public class Sugerencias extends Fragment {
                 String telE= tel.getText().toString();
                 String correoE= correo.getText().toString();
                 String comeE= comtari.getText().toString();
+                String resE=res.getSelectedItem().toString();
                 Float cal=cali.getRating();
 
 
-                Reseña re= new Reseña(nomE,apE, amE, telE,correoE,comeE,cal);
+                Reseña re= new Reseña(nomE,apE, amE, telE,correoE,comeE,cal,resE);
                 mDatabase.child("reseñas").child(telE).setValue(re);
                 Toast.makeText(getContext(),"Reseña almacenada",Toast.LENGTH_LONG).show();
             }
