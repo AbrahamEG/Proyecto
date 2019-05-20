@@ -90,6 +90,8 @@
         <item>@drawable/d_galpon</item>
         <item>@drawable/e_texasribs</item>
         <item>@drawable/f_alamillo</item>
+        <item>@drawable/g_lafincadeadobe</item>
+        <item>@drawable/h_cambalache</item>
     </array>
     <array name="places_picture">
         <item>@drawable/a</item>
@@ -111,6 +113,17 @@
         <item>www.alamillorestaurante.com</item>
         <item>www.fincadeadobe.com</item>
      <item>www.cambalache.com</item>
+    </array>
+
+    <array name="horarios">
+        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs</item>
     </array>
 
 

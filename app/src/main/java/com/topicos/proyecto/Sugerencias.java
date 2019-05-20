@@ -77,7 +77,7 @@ public class Sugerencias extends Fragment {
 
                 Reseña re= new Reseña(nomE,apE, amE, telE,correoE,comeE,cal);
                 mDatabase.child("reseñas").child(telE).setValue(re);
-                Toast.makeText(getContext(),"Reseña alacenada",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Reseña almacenada",Toast.LENGTH_LONG).show();
             }
         });
 
