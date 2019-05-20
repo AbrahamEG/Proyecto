@@ -9,7 +9,7 @@ public class Reseña {
 
 
 
-    public Reseña(String nom, String app, String apm, String tel, String correo, String comtari, float res, String resta) {
+    public Reseña(String nom, String app, String apm, String tel, String correo, String comtari, float res) {
         this.nom = nom;
         this.app = app;
         this.apm = apm;
@@ -17,7 +17,7 @@ public class Reseña {
         this.correo = correo;
         this.comtari = comtari;
         this.res= res;
-        this.resta=resta;
+        //this.resta=resta;
     }
 
     public String getResta() {
