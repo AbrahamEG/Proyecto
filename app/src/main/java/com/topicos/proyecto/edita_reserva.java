@@ -81,10 +81,10 @@ public class edita_reserva extends Fragment {
 
         if(cant==1)
         {
-            Toast.makeText(getContext(), "Perfil modificado exitosamente",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Reservación modificada exitosamente",Toast.LENGTH_SHORT).show();
         }else
         {
-            Toast.makeText(getContext(), "No se pudo realizar la modificacion",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "No se pudo realizar la modificación",Toast.LENGTH_SHORT).show();
         }
 
 
