@@ -18,16 +18,16 @@
             android:title="Reservar" />
         <item
             android:id="@+id/mMisReserva"
-            android:icon="@drawable/lugar"
+            android:icon="@drawable/list"
             android:title="Mis Reservaciones" />
         <item
             android:id="@+id/mCatalogo"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/lugar"
             android:title="Restaurantes" />
 
         <item
             android:id="@+id/mSugerencias"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/idea"
             android:title="Comentarios y Sugerencias" />
 
         <item
