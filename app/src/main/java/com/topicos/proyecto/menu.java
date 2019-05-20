@@ -30,8 +30,14 @@ public class menu extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                setTitle("Sugerencias");
+                Sugerencias fragmencl = new Sugerencias();
+                Bundle args = new Bundle();
+                args.putString("textFromActivityB", texto);
+                fragmencl.setArguments(args);
+                android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.panel, fragmencl, "Crear");
+                transaction.commit();
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
