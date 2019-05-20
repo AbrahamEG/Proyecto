@@ -36,6 +36,7 @@ public class misreservaciones extends Fragment {
 
         final View view = inflater.inflate(R.layout.fragment_misreservaciones, container, false);
         ListView l=(ListView)view.findViewById(R.id.listR) ;
+        texto = getArguments().getString("textFromActivityB");
 
         Cursor cursor = getRegistrosProductos();
         ArrayList<String> reg =getPROD(cursor);
@@ -50,7 +51,7 @@ public class misreservaciones extends Fragment {
     public Cursor getRegistrosProductos(){
         sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF1", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        return db.rawQuery("SELECT * FROM reservaciones",null);
+        return db.rawQuery("SELECT * FROM reservaciones where tel="+texto,null);
     }
 
     public ArrayList<String> getPROD(Cursor cur){

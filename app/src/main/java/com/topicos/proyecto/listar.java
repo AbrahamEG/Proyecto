@@ -50,7 +50,7 @@ public class listar extends Fragment {
         comtari=(TextView)view.findViewById(R.id.t7);
         cali=(TextView)view.findViewById(R.id.t8);
         tel.setText(texto);*/
-
+        texto = getArguments().getString("textFromActivityB");
         ListView l=(ListView)view.findViewById(R.id.list) ;
 
         Cursor cursor = getRegistrosProductos();
@@ -93,7 +93,7 @@ public class listar extends Fragment {
     public Cursor getRegistrosProductos(){
         sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF1", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        return db.rawQuery("SELECT * FROM comentarios",null);
+        return db.rawQuery("SELECT * FROM comentarios where tel="+texto,null);
     }
 
     public ArrayList<String> getPROD(Cursor cur){
