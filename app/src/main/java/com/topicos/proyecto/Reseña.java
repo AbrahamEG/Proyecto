@@ -4,10 +4,12 @@ import android.widget.TextView;
 
 public class Reseña {
 
-    String nom,app,apm,tel,correo, comtari;
+    String nom,app,apm,tel,correo, comtari,resta;
     float res;
 
-    public Reseña(String nom, String app, String apm, String tel, String correo, String comtari, float res) {
+
+
+    public Reseña(String nom, String app, String apm, String tel, String correo, String comtari, float res, String resta) {
         this.nom = nom;
         this.app = app;
         this.apm = apm;
@@ -15,6 +17,15 @@ public class Reseña {
         this.correo = correo;
         this.comtari = comtari;
         this.res= res;
+        this.resta=resta;
+    }
+
+    public String getResta() {
+        return resta;
+    }
+
+    public void setResta(String resta) {
+        this.resta = resta;
     }
 
     public float getRes() {
