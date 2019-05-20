@@ -136,7 +136,7 @@
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/btnResevar"
+        android:id="@+id/btnGuarda"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:layout_marginStart="130dp"

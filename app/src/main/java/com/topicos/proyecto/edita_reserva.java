@@ -1,5 +1,7 @@
 package com.topicos.proyecto;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,12 +12,12 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 public class edita_reserva extends Fragment {
 
-    String texto;
+    String codigo;
     EditText nom,app,apm,tel,correo;
     TextView Rfecha,Rhora;
     Spinner res, mesa;
@@ -38,9 +40,10 @@ public class edita_reserva extends Fragment {
         mesa=(Spinner)view.findViewById(R.id.sMesas);
         Rfecha=(TextView)view.findViewById(R.id.RFecha);
         Rhora=(TextView)view.findViewById(R.id.RHora);
-        tel.setText(texto);
-        guarda=(Button)view.findViewById(R.id.btnResevar);
+        guarda=(Button)view.findViewById(R.id.btnGuarda);
         buscar=(Button)view.findViewById(R.id.buttonBus);
+
+        tel.setText(codigo);
 
         guarda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +52,47 @@ public class edita_reserva extends Fragment {
 
             }
         });
+
         return view;
     }
+
+    public void modificar(View view)
+    {
+        sqlLite admin = new sqlLite(getContext(),"proyectoDesMovF1",null,1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        String n = nom.getText().toString();
+        String appp = app.getText().toString();
+        String appm = apm.getText().toString();
+        String id = tel.getText().toString();
+        String corre=correo.getText().toString();
+
+        ContentValues registro = new ContentValues();
+
+        registro.put("sexo", res.getSelectedItem().toString());
+        registro.put("nombre", n);
+        registro.put("app",appp);
+        registro.put("apm",appm);
+        registro.put("correo",corre);
+
+        int cant = db.update("usuario",registro, "id="+id ,null);
+
+        db.close();
+
+        if(cant==1)
+        {
+            Toast.makeText(getContext(), "Perfil modificado exitosamente",Toast.LENGTH_SHORT).show();
+        }else
+        {
+            Toast.makeText(getContext(), "No se pudo realizar la modificacion",Toast.LENGTH_SHORT).show();
+        }
+
+
+
+        db.close();
+
+    }
+
 
 
 }
