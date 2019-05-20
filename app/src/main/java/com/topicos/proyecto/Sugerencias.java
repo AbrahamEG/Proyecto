@@ -20,6 +20,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +36,7 @@ public class Sugerencias extends Fragment {
     Spinner res;
     RatingBar cali;
     Button enviar;
+    DatabaseReference mDatabase;
 
 
     public Sugerencias() {
@@ -46,6 +50,7 @@ public class Sugerencias extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_sugerencias, container, false);
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         nom=(TextView) view.findViewById(R.id.tViewNom);
         apm=(TextView)view.findViewById(R.id.tViewAm);
         app=(TextView)view.findViewById(R.id.tViewAp);
@@ -59,7 +64,20 @@ public class Sugerencias extends Fragment {
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 enviar(v);
+                String nomE=nom.getText().toString();
+                String amE= apm.getText().toString();
+                String apE= app.getText().toString();
+                String telE= tel.getText().toString();
+                String correoE= correo.getText().toString();
+                String comeE= comtari.getText().toString();
+                Float cal=cali.getRating();
+
+
+                Reseña re= new Reseña(nomE,apE, amE, telE,correoE,comeE,cal);
+                mDatabase.child("reseñas").child(telE).setValue(re);
+                Toast.makeText(getContext(),"Reseña alacenada",Toast.LENGTH_LONG).show();
             }
         });
 
