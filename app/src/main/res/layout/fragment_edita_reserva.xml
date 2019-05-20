@@ -4,7 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Reservar" >
+    tools:context=".edita_reserva" >
+
+    <TextView
+        android:id="@+id/codi"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:hint="Código"
+        android:text="Codigo" />
+
+    <Button
+        android:id="@+id/buttonBus"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:text="Busacar"
+        android:textSize="10sp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -127,6 +141,6 @@
         android:layout_height="45dp"
         android:layout_marginStart="130dp"
         android:layout_marginTop="30dp"
-        android:text="Reservar" />
+        android:text="Guardar" />
 
 </LinearLayout>

@@ -54,7 +54,7 @@ TextView Rfecha,Rhora;
        Rfecha=(TextView)view.findViewById(R.id.RFecha);
         Rhora=(TextView)view.findViewById(R.id.RHora);
         tel.setText(texto);
-        reserva=(Button)view.findViewById(R.id.btnReserva);
+        reserva=(Button)view.findViewById(R.id.btnResevar);
         reserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
