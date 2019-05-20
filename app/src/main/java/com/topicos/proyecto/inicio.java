@@ -1,31 +1,36 @@
 package com.topicos.proyecto;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class inicio extends AppCompatActivity implements  View.OnClickListener{
 
     Button ingreso;
-private TextInputEditText usr, pwd;
+    private TextInputEditText usr, pwd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio);
 
+
         TextView t=(TextView) findViewById(R.id.reg);
         usr= findViewById(R.id.usua);
         pwd= (TextInputEditText) findViewById(R.id.pwd);
         ingreso=(Button)findViewById(R.id.bingre);
+
 
         t.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,12 +54,17 @@ private TextInputEditText usr, pwd;
 
 
     }
+    @SuppressLint("NewApi")
     public void consulta(View view) {
         sqlLite admin = new sqlLite(this, "proyectoDesMovF1", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
         String numc = usr.getText().toString();
         String con = pwd.getText().toString();
+
+
+
+
 
         if (numc.isEmpty() && con.isEmpty()){
 
@@ -97,7 +107,6 @@ private TextInputEditText usr, pwd;
             }
         }
     }
-
     @Override
     public void onClick(View v) {
 
