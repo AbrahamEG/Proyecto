@@ -142,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
-                android:text="Reserva" />
+                android:text="Regresar" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

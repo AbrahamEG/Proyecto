@@ -86,7 +86,8 @@ public class DetailActivity extends AppCompatActivity {
         reserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent in= new Intent(DetailActivity.this, menu.class);
+                startActivity(in);
             }
         });
     }

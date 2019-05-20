@@ -58,7 +58,7 @@ public class misreservaciones extends Fragment {
         String item="";
         if(cur.moveToFirst()){
             do{
-                //item+="ID: ["+cur.getInt(0)+"]\r\n";
+                item+="ID: ["+cur.getInt(0)+"]\r\n";
                 item+="Nombre: "+cur.getString(1)+"\r\n";
                 item+="Apellido Paterno: "+cur.getString(2)+"\r\n";
                 item+="Apellido Materno: "+cur.getString(3)+"\r\n";

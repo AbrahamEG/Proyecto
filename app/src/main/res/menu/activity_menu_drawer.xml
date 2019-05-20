@@ -20,6 +20,11 @@
             android:id="@+id/mMisReserva"
             android:icon="@drawable/list"
             android:title="Mis Reservaciones" />
+
+        <item
+            android:id="@+id/mCancelaR"
+            android:icon="@drawable/list"
+            android:title="Cancelar Reservacion" />
         <item
             android:id="@+id/mCatalogo"
             android:icon="@drawable/lugar"

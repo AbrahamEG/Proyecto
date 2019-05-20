@@ -86,7 +86,7 @@ public class menu extends AppCompatActivity
             builder.setTitle("ACERCA DE...");
             builder.setMessage("\nDesarrollado por:\n"+
                     "  -González Pérez José María\n" +
-                    "  -Estrada Garcia Abraham\n\n"+
+                    "  -Estrada Garcia Abraham\n"+
                     "  -Esteban Dionisio Daniel \n\n"+
                     "   Desarrollo Movil");
             builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
@@ -171,12 +171,9 @@ public class menu extends AppCompatActivity
             transaction.replace(R.id.panel, fragmencl, "Crear");
             transaction.commit();
 
-        } if (id == R.id.nav_share) {
-
-            } else if (id == R.id.nav_send) {
-
-            setTitle("Sugerencias");
-          listar fragmencl = new listar();
+        } else if (id==R.id.mCancelaR) {
+            setTitle("Cancelar Reservacion");
+            cancelaReservacion fragmencl = new cancelaReservacion();
             Bundle args = new Bundle();
             args.putString("textFromActivityB", texto);
             fragmencl.setArguments(args);
@@ -184,7 +181,21 @@ public class menu extends AppCompatActivity
             transaction.replace(R.id.panel, fragmencl, "Crear");
             transaction.commit();
 
+        }if (id == R.id.nav_share) {
+
+            } else if (id == R.id.nav_send) {
+
+                setTitle("Sugerencias");
+                listar fragmencl = new listar();
+                Bundle args = new Bundle();
+                args.putString("textFromActivityB", texto);
+                fragmencl.setArguments(args);
+                android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.panel, fragmencl, "Crear");
+                transaction.commit();
+
             }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
