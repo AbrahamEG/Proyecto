@@ -25,7 +25,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     Button btValidar,bcancelar;
     EditText nombre, ap, am, cont, cont1, tel, correoo;
     Spinner sex;
-    Button registro;
+    Button registro, cancela;
     DatabaseReference mDatabase;
 
 
@@ -63,7 +63,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
 
                 Usuario user = new Usuario(nomE,apE,amE,conE,telE,correoE,sexE);
                 mDatabase.child("usuarios").child(telE).setValue(user);
-                Toast.makeText(getApplicationContext(),"Usuario registrado",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),"Usuario registrado",Toast.LENGTH_LONG).show();
 
             }
         });
@@ -74,8 +74,10 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
               /*  Intent intent =new Intent(v.getContext(), inicio.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
                 finish();*/
+              finish();
             }
         });
+
         setupActionBar();
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Opciones, android.R.layout.simple_spinner_item);

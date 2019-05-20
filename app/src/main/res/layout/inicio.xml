@@ -24,8 +24,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="146dp"
-        android:layout_height="0dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="48dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
@@ -52,7 +52,7 @@
     <Button
         android:id="@+id/bingre"
         android:layout_width="128dp"
-        android:layout_height="0dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="28dp"
         android:onClick="consulta"
         android:text="Ingresar"
