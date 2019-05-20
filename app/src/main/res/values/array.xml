@@ -116,14 +116,22 @@
     </array>
 
     <array name="horarios">
-        <item>10:00hrs a 19:00hrs</item>
-        <item>10:00hrs a 19:00hrs</item>
-        <item>10:00hrs a 19:00hrs</item>
-        <item>10:00hrs a 19:00hrs</item>
-        <item>10:00hrs a 19:00hrs</item>
-        <item>10:00hrs a 19:00hrs</item>
-        <item>10:00hrs a 19:00hrs</item>
-        <item>10:00hrs a 19:00hrs</item>
+        <item>10:00hrs a 19:00hrs
+                Lunes a Domingo</item>
+        <item>12:00hrs a 21:00hrs
+                Lunes a Domingo</item>
+        <item>13:00hrs a 18:00hrs
+                Lunes a Domingo</item>
+        <item>11:00hrs a 22:00hrs
+                Lunes a Domingo </item>
+        <item>15:00hrs a 19:00hrs
+                Lunes a Domingo</item>
+        <item>14:00hrs a 18:00hrs
+                Lunes a Domingo </item>
+        <item>16:00hrs a 23:00hrs
+                Lunes a Domingo</item>
+        <item>12:00hrs a 18:00hrs
+                Lunes a Domingo </item>
     </array>
 
 
