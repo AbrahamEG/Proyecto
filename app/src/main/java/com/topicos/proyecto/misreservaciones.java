@@ -51,7 +51,8 @@ public class misreservaciones extends Fragment {
     public Cursor getRegistrosProductos(){
         sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF1", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        return db.rawQuery("SELECT * FROM reservaciones where tel="+texto,null);
+       return db.rawQuery("SELECT * FROM reservaciones where tel="+texto,null);
+       // return db.rawQuery("SELECT * FROM reservaciones",null);
     }
 
     public ArrayList<String> getPROD(Cursor cur){

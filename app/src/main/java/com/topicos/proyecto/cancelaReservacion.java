@@ -78,6 +78,14 @@ public class cancelaReservacion extends Fragment {
            }
        });
 
+       regre.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent in= new Intent(getContext(), menu.class);
+               startActivity(in);
+           }
+       });
+
 
 
 

@@ -93,7 +93,8 @@ public class listar extends Fragment {
     public Cursor getRegistrosProductos(){
         sqlLite admin = new sqlLite(getContext(), "proyectoDesMovF1", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        return db.rawQuery("SELECT * FROM comentarios where tel="+texto,null);
+       return db.rawQuery("SELECT * FROM comentarios where tel="+texto,null);
+        //return db.rawQuery("SELECT * FROM comentarios",null);
     }
 
     public ArrayList<String> getPROD(Cursor cur){

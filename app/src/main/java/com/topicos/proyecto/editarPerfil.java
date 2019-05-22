@@ -93,6 +93,9 @@ public class editarPerfil extends Fragment {
         if(cant==1)
         {
             Toast.makeText(getContext(), "Perfil modificado exitosamente",Toast.LENGTH_SHORT).show();
+
+            Intent in= new Intent(getContext(), menu.class);
+            startActivity(in);
         }else
         {
             Toast.makeText(getContext(), "No se pudo realizar la modificacion",Toast.LENGTH_SHORT).show();
